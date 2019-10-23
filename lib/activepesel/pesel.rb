@@ -16,7 +16,7 @@ module Activepesel
     end
     
     def valid?
-      digits.size == 11 && control_value % 10 == 0
+      @number[2..3].to_i < 32 && digits.size == 11 && control_value % 10 == 0
     end
     
     def digits
